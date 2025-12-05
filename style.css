@@ -1,0 +1,349 @@
+/* Comandos que facilitan la vida */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica;
+}
+
+:root{
+    --color-header: #ececec;
+    --color-primary: #1f1f1fd1;
+    --color-secondary: #000000;
+    --color-danger: #B20049;
+    --color-light: #ffffff;
+    --font: 15px;
+}
+
+html{
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+body{
+    margin: 0;
+    background: var(--color-light);
+}
+
+/* inicio del HEADER */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-danger);
+    position: fixed;
+    width: 100%;
+    padding: 1rem;
+    z-index: 999;
+}
+
+nav {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    font-weight: bold;
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+}
+
+a{
+    margin: 1rem;
+    gap: 2rem;
+    color: var(--color-light);
+    text-decoration: none;
+}
+
+/* ===== HAMBURGUESA CSS-ONLY ===== */
+#menu-label{
+    display: none;
+    width: 3rem;
+    height: 36px;
+    cursor: pointer;
+    align-items: center;
+    justify-content:end;
+    gap: 4px;
+    padding: .5rem;
+  }
+  
+  #menu-label .mbar{
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: var(--color-light);
+    border-radius: 3px;
+  }
+  
+  /* Escritorio: ocultar checkbox label */
+  @media (max-width: 768px) {
+    #menu-label { display: flex; flex-direction: column; }
+  
+    /* Ocultar el ul por defecto en móvil */
+    nav.menu ul {
+      display: none;
+      position: absolute;
+      top: 70px;
+      background: var(--color-light);
+      border-radius: 8px;
+      padding: 1rem;
+      flex-direction: column;
+      gap: .5rem;
+      min-width: 180px;
+      z-index: 9999;
+    }
+  
+    /* Cuando el checkbox está checked, mostrar menu */
+    #menu-toggle:checked + #menu-label + nav.menu ul {
+      display: flex; 
+    }
+  
+    /* Ajustes visuales de enlaces en el mobile-menu */
+    nav.menu a { color: var(--color-secondary); padding: .4rem 0; }
+  }
+  
+
+/* fin del HEADER */
+
+#home {
+    background: var(--color-secondary);
+    padding-top: 21rem;
+    padding-bottom: 20rem;
+}
+
+h1 {
+    animation: fade-in 1s ease-in-out forwards;
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: var(--color-danger);
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* h2{
+    font-size: 25px;
+    padding: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+h3{
+    animation: fade-in 1s ease-in-out forwards;
+    color: var(--color-light);
+    font-size: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    padding-top: 65px
+}
+
+#aboutme{
+    margin-bottom: 2rem;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+#aboutme h2{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--color-danger);
+}
+
+.info {
+    padding: 3rem;
+    background: var(--color-secondary);
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info img{
+    justify-self: center;
+    width: auto;
+    height: auto;
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 15px;
+    border-color: var(--color-danger);
+    object-fit: cover;
+}
+
+.info-container{
+    justify-self: center;
+}
+
+img { max-width: 100%; height: auto; }
+
+.info p{
+    width: auto;
+    margin: 1rem;
+    color: var(--color-light);
+    text-align: left;
+}
+
+/* Responsive About Me*/
+
+#interests{
+    width: 100%;
+    position: relative;
+    background: var(--color-secondary);
+    padding: 5em 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    justify-content: center;
+    align-items: start;
+    gap: 3em;
+}
+
+#interests h2{
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--color-danger);
+}
+
+.box{
+    transition: background-color 0.3s ease, width 0.3s ease;
+    border-radius: 2rem;
+    padding: 3rem;
+    background: var(--color-light)
+}
+
+.box:hover{
+    background: var(--color-danger);
+}
+
+.box:hover .text{
+    color: var(--color-light);
+}
+
+.box figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
+
+.box img{
+    max-width: 100%;
+    height: 6rem;
+}
+
+.box p{
+    transition: background-color 0.5s ease, width 0.5s ease;
+    color: var(--color-secondary);
+    display: grid;
+    grid-template-rows: 10px, 1fr;
+    text-align: left;
+}
+
+#contact{
+    resize: none;
+    display: flex;
+    justify-content: left;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    padding-left: 6rem ;
+    background-image: url(image/ChatGPT\ Image\ 3\ dic\ 2025\,\ 09_26_25\ p.m..png);
+}
+
+#contact h2{
+    color: var(--color-danger);
+    margin-bottom: 2rem;
+}
+
+form{
+    font-size: 15px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-primary);
+}
+
+form label{
+    color: var(--color-primary);
+    margin-top: 1rem;
+}
+
+form input{
+    border-radius: 8px;
+    height: 30px;
+    padding: .5rem;
+    box-sizing: border-box;
+    text-align: start;
+    width: 20rem;
+    border: none;
+    background: var(--color-light);
+    outline-color: var(--color-danger);
+}
+
+form textarea{
+    height: 7rem;
+    resize: none;
+    padding: .5rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--color-light);
+    outline-color: var(--color-danger);
+}
+
+button{
+    margin-top: 1rem;
+    border-radius: 5px;
+    border: none;
+    background: var(--color-danger);
+    color: var(--color-light);
+    padding: .5rem;
+}
+
+footer{
+    padding: 1rem;
+    color: var(--color-light);
+    text-align: center;
+    align-items: center;
+    background: var(--color-danger);
+}
+
+.socialMedia{
+    display: flex;
+    justify-content: center;
+}
+
+.socialMedia a{
+    cursor: pointer;
+}
+.socialMedia a:hover{
+    animation: pulse 1s infinite;
+}
+
+footer p{
+    font-size: var(--font);
+}
+
