@@ -38,6 +38,10 @@ header {
     z-index: 999;
 }
 
+@media (max-width: 768px) {
+    header { display: flex; justify-content: flex-end; }
+}
+
 nav {
     margin: 1rem;
     display: flex;
@@ -65,11 +69,11 @@ a{
 /* ===== HAMBURGUESA CSS-ONLY ===== */
 #menu-label{
     display: none;
-    width: 3rem;
+    width: 2rem;
     height: 36px;
     cursor: pointer;
     align-items: center;
-    justify-content:end;
+    justify-content: center;
     gap: 4px;
     padding: .5rem;
   }
@@ -84,7 +88,7 @@ a{
   
   /* Escritorio: ocultar checkbox label */
   @media (max-width: 768px) {
-    #menu-label { display: flex; flex-direction: column; }
+    #menu-label { display: flex; flex-direction: column; justify-content: center;}
   
     /* Ocultar el ul por defecto en móvil */
     nav.menu ul {
@@ -95,6 +99,7 @@ a{
       border-radius: 8px;
       padding: 1rem;
       flex-direction: column;
+      margin-right: 7.5rem;
       gap: .5rem;
       min-width: 180px;
       z-index: 9999;
@@ -106,7 +111,7 @@ a{
     }
   
     /* Ajustes visuales de enlaces en el mobile-menu */
-    nav.menu a { color: var(--color-secondary); padding: .4rem 0; }
+    nav.menu a { color: var(--color-secondary); }
   }
   
 
@@ -125,7 +130,7 @@ h1 {
     grid-template-columns: auto;
     justify-content: center;
     align-items: center;
-    font-size: 5rem;
+    font-size: 4rem;
     color: var(--color-danger);
 }
 
@@ -270,7 +275,7 @@ img { max-width: 100%; height: auto; }
     justify-content: left;
     padding-top: 8rem;
     padding-bottom: 8rem;
-    padding-left: 6rem ;
+    padding-left: 1rem ;
     background-image: url(image/ChatGPT\ Image\ 3\ dic\ 2025\,\ 09_26_25\ p.m..png);
 }
 
@@ -280,11 +285,16 @@ img { max-width: 100%; height: auto; }
 }
 
 form{
+    margin-left: 5rem;
     font-size: 15px;
     display: grid;
     justify-content: center;
     align-items: center;
     color: var(--color-primary);
+}
+
+@media (max-width: 790px) {
+    form { margin: .3rem; }
 }
 
 form label{
